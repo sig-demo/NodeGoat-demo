@@ -35,7 +35,7 @@ jobs:
       run: |
         curl -fLOsS $POLARIS_SERVER_URL/api/tools/polaris_cli-linux64.zip
         unzip -d /tmp -jo polaris_cli-linux64.zip
-        /tmp/polaris analyze -w --coverity-ignore-capture-failure --incremental files-to-scan.txt | tee polaris-output.txt    
+        /tmp/polaris --co project.branch="arthur-sig-patch-1" analyze -w --coverity-ignore-capture-failure --incremental files-to-scan.txt | tee polaris-output.txt    
  
     # Convert Polaris to SARIF
     - name: polaris_sarif
